@@ -63,6 +63,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Mail;
+use App\Mail\MyFirstMail;
 
 class MailController extends Controller
 {
@@ -81,6 +83,7 @@ class MailController extends Controller
     }
 
 }
+
 Step 5: Add View File
 resources/views/emails/myFirstMail.blade.php
 Hi,
