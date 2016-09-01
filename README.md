@@ -52,3 +52,39 @@ class MyFirstMail extends Mailable
 
 Step 3: Add Route
 routes/web.php
+Route::get('my-first-mail','MailController@myFirstMail');
+
+
+Step 4: Add Controller Method
+app/Http/Controllers/MailController.php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+
+class MailController extends Controller
+{
+    /**
+     * Send My First Mail Example
+     *
+     * @return void
+     */
+    public function myFirstMail()
+    {
+        $myEmail = 'vpijayanand@gmail.com';
+        Mail::to($myEmail)->send(new MyFirstMail());
+
+
+        dd("Mail Send Successfully");
+    }
+
+}
+Step 5: Add View File
+resources/views/emails/myFirstMail.blade.php
+Hi,
+
+This is My First Mail Sending Using Laravel 5.3 Mailable
+
+Thank you...
